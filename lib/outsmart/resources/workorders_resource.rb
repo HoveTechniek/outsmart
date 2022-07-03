@@ -22,7 +22,8 @@ module Outsmart
                       })
       end
 
-      super(**params)
+      response = get_request(outsmart_url, params: format_search_params(filters:))
+      Collection.from_response(response, key: 'response', type: @dashboard_class)
     end
   end
 end
