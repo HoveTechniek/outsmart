@@ -22,7 +22,7 @@ module Outsmart
                       })
       end
 
-      response = get_request(outsmart_url, params)
+      response = get_request(outsmart_url, params:)
       Collection.from_response(response, key: 'response', type: @dashboard_class)
     end
   end
